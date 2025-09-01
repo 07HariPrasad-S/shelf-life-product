@@ -137,7 +137,7 @@
     </div>
 
     <div class="footer">
-      <span>Backend: <code>http://127.0.0.1:5000/get_info</code></span>
+      <span>Backend: <code>https://shelf-life-product-2.onrender.com/get_info</code></span>
       <span class="hint">Tip: You can leave the date empty to get only shelf life.</span>
     </div>
   </div>
@@ -176,7 +176,8 @@
         const params = new URLSearchParams({ product });
         if (date) params.append('manufacture_date', date);
 
-        const url = `http://127.0.0.1:5000/get_info?${params.toString()}`;
+        // 🔥 Updated to use Render backend
+        const url = `https://shelf-life-product-2.onrender.com/get_info?${params.toString()}`;
 
         const res = await fetch(url);
         const data = await res.json();
